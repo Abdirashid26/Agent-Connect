@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: API-GATEWAY-AGENT-CONNECT
+
+
+server:
+  port: 4001
