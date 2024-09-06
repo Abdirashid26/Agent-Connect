@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: faisaldev
+      changes:
+        - addColumn:
+            tableName: tb_users
+            columns:
+              - column:
+                  name: id_number
+                  type: varchar(50)
+              - column:
+                  name: estate
+                  type: varchar(100)
+

@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: USER-AGENT-CONNECT
+  profiles:
+    active: dev
+
+server:
+  port: 4002
