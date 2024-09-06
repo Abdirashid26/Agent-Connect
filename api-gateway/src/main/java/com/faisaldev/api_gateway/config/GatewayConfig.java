@@ -16,11 +16,11 @@ public class GatewayConfig {
     public RouteLocator customRouteLocator(RouteLocatorBuilder routeLocatorBuilder){
         System.out.println("Gateway Config Route: "+ routeLocatorBuilder.routes().toString());
         return routeLocatorBuilder.routes()
-                .route(p -> p.path(BASE_URI_PATH+"user/**")
+                .route(p -> p.path(BASE_URI_PATH+"user-service/**")
 //                        .filters(f -> f.requestRateLimiter(c -> {
 //                            c.setRateLimiter(new RedisRateLimiter(10, 10));
 //                        }))
-                        .uri("lb://USER-SERVICE"))
+                        .uri("lb://USER-AGENT-CONNECT"))
                 .build();
     }
 

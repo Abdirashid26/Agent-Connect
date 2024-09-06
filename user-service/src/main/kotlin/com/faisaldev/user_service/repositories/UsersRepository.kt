@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository
 @Repository
 interface UsersRepository : CoroutineCrudRepository<User,Long> {
 
+    suspend fun findByPhoneNumber(phoneNumber : String) : User?
+
 }

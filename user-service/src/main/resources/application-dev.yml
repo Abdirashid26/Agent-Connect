@@ -8,6 +8,10 @@ spring:
     url: r2dbc:postgresql://localhost:5432/USERS_AGENT_CONNECT
     username: postgres
     password: faisal26
+  data:
+    r2dbc:
+      repositories:
+        enabled: true
     pool:
       initial-size: 10         # Initial connections in the pool
       max-size: 20             # Maximum number of connections in the pool
@@ -19,6 +23,12 @@ spring:
 logging:
   level:
     liquibase: DEBUG
+    org:
+      springframework:
+        data:
+          r2dbc: DEBUG
+    io:
+      r2dbc : DEBUG
 
 
 eureka:

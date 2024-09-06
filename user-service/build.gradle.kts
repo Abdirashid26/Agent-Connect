@@ -29,6 +29,8 @@ dependencies {
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 	implementation("org.postgresql:r2dbc-postgresql:1.0.5.RELEASE")
 	implementation("org.liquibase:liquibase-core:4.29.2")
+	implementation("com.google.code.gson:gson:2.11.0")
+	implementation("org.springframework.boot:spring-boot-starter-data-r2dbc:3.3.3")
 	implementation("org.springframework.boot:spring-boot-starter-jdbc:3.3.3")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.3.3")
 	implementation("io.r2dbc:r2dbc-pool:1.0.1.RELEASE")
