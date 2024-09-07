@@ -1,11 +1,11 @@
 spring:
   liquibase:
-    url: jdbc:postgresql://localhost:5432/USERS_AGENT_CONNECT
+    url: jdbc:postgresql://localhost:5432/AUTH_AGENT_CONNECT
     user: postgres
     password: faisal26
     change-log: classpath:/db/changelog/db.changelog-master.yml
   r2dbc:
-    url: r2dbc:postgresql://localhost:5432/USERS_AGENT_CONNECT
+    url: r2dbc:postgresql://localhost:5432/AUTH_AGENT_CONNECT
     username: postgres
     password: faisal26
   data:
@@ -24,10 +24,19 @@ spring:
         binder:
           autoCreateTopics: true
           brokers: 10.20.2.19:9092
-        bindings:
-          create-credentials-agent-connect-topic-out-0:
-            destination: create-credentials-agent-connect-topic
-            group: create-credentials-agent-connect
+      bindings:
+        createUserCredentials-in-0:
+          destination: create-credentials-agent-connect-topic
+          group: create-credentials-agent-connect
+    function:
+      definition: createUserCredentials
+
+
+security:
+  jwt:
+    secret-key: 3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b
+    expiration: 3600000
+
 
 logging:
   level:
@@ -38,6 +47,7 @@ logging:
           r2dbc: DEBUG
     io:
       r2dbc : DEBUG
+
 
 
 eureka:

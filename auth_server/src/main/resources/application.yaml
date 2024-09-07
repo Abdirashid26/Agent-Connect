@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: AUTH-AGENT-CONNECT
+  profiles:
+    active: dev
+
+server:
+  port: 4003
