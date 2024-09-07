@@ -30,7 +30,8 @@ data class UserDto(
     val phoneNumber: String,
     val county : String,
     val idNumber : String,
-    val estate : String
+    val estate : String,
+    val password : String? = null
 )
 
 

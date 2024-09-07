@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: faisaldev
+      changes:
+        - addColumn:
+            tableName: users
+            columns:
+              - column:
+                  name: role_ids
+                  type: varchar(255)
+                  defaultValue: ''
+                  remarks: 'Comma-separated list of role IDs'
+
+        - addNotNullConstraint:
+            tableName: users
+            columnName: role_ids
+            columnDataType: varchar(255)
