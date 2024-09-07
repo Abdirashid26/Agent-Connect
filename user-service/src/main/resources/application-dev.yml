@@ -1,0 +1,39 @@
+spring:
+  liquibase:
+    url: jdbc:postgresql://localhost:5432/USERS_AGENT_CONNECT
+    user: postgres
+    password: faisal26
+    change-log: classpath:/db/changelog/db.changelog-master.yml
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/USERS_AGENT_CONNECT
+    username: postgres
+    password: faisal26
+  data:
+    r2dbc:
+      repositories:
+        enabled: true
+    pool:
+      initial-size: 10         # Initial connections in the pool
+      max-size: 20             # Maximum number of connections in the pool
+      max-idle-time: 30m       # Maximum idle time for connections (30 minutes)
+      max-acquire-time: 5s     # Maximum time to acquire a connection (5 seconds)
+      validation-query: SELECT 1  # Query to validate connections
+
+
+logging:
+  level:
+    liquibase: DEBUG
+    org:
+      springframework:
+        data:
+          r2dbc: DEBUG
+    io:
+      r2dbc : DEBUG
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    preferIpAddress: true

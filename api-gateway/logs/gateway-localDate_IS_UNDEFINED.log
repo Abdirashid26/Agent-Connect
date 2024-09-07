@@ -1,0 +1,570 @@
+2024-08-28 00:10:43 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-08-28 00:10:43 [main] INFO  c.f.a.ApiGatewayApplication - Starting ApiGatewayApplication using Java 21 with PID 26896 (D:\FAISAL_PROJECTS\AGENT CONNECT\api-gateway\target\classes started by fabdirashid in D:\FAISAL_PROJECTS\AGENT CONNECT\api-gateway)
+2024-08-28 00:10:43 [main] INFO  c.f.a.ApiGatewayApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-28 00:10:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-28 00:10:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-28 00:10:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 0 Redis repository interfaces.
+2024-08-28 00:10:45 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=04263a67-33b1-312e-a7d6-d1e30152c9f1
+2024-08-28 00:10:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-28 00:10:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:10:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-28 00:10:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:10:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:10:47 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'customRouteLocator' defined in class path resource [com/faisaldev/api_gateway/config/GatewayConfig.class]: Failed to instantiate [org.springframework.cloud.gateway.route.RouteLocator]: Factory method 'customRouteLocator' threw exception with message: BurstCapacity(2) must be greater than or equal than replenishRate(10)
+2024-08-28 00:10:47 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-28 00:10:47 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'customRouteLocator' defined in class path resource [com/faisaldev/api_gateway/config/GatewayConfig.class]: Failed to instantiate [org.springframework.cloud.gateway.route.RouteLocator]: Factory method 'customRouteLocator' threw exception with message: BurstCapacity(2) must be greater than or equal than replenishRate(10)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.faisaldev.api_gateway.ApiGatewayApplication.main(ApiGatewayApplication.java:10)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cloud.gateway.route.RouteLocator]: Factory method 'customRouteLocator' threw exception with message: BurstCapacity(2) must be greater than or equal than replenishRate(10)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: BurstCapacity(2) must be greater than or equal than replenishRate(10)
+	at org.springframework.util.Assert.isTrue(Assert.java:111)
+	at org.springframework.cloud.gateway.filter.ratelimit.RedisRateLimiter$Config.setBurstCapacity(RedisRateLimiter.java:336)
+	at org.springframework.cloud.gateway.filter.ratelimit.RedisRateLimiter.<init>(RedisRateLimiter.java:133)
+	at com.faisaldev.api_gateway.config.GatewayConfig.lambda$customRouteLocator$0(GatewayConfig.java:21)
+	at org.springframework.cloud.gateway.filter.factory.GatewayFilterFactory.apply(GatewayFilterFactory.java:46)
+	at org.springframework.cloud.gateway.route.builder.GatewayFilterSpec.requestRateLimiter(GatewayFilterSpec.java:649)
+	at com.faisaldev.api_gateway.config.GatewayConfig.lambda$customRouteLocator$1(GatewayConfig.java:20)
+	at org.springframework.cloud.gateway.route.builder.BooleanSpec.filters(BooleanSpec.java:76)
+	at com.faisaldev.api_gateway.config.GatewayConfig.lambda$customRouteLocator$2(GatewayConfig.java:20)
+	at org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder$Builder.route(RouteLocatorBuilder.java:82)
+	at com.faisaldev.api_gateway.config.GatewayConfig.customRouteLocator(GatewayConfig.java:19)
+	at com.faisaldev.api_gateway.config.GatewayConfig$$SpringCGLIB$$0.CGLIB$customRouteLocator$0(<generated>)
+	at com.faisaldev.api_gateway.config.GatewayConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:348)
+	at com.faisaldev.api_gateway.config.GatewayConfig$$SpringCGLIB$$0.customRouteLocator(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:146)
+	... 20 common frames omitted
+2024-08-28 00:14:24 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-08-28 00:14:25 [main] INFO  c.f.a.ApiGatewayApplication - Starting ApiGatewayApplication using Java 21 with PID 22192 (D:\FAISAL_PROJECTS\AGENT CONNECT\api-gateway\target\classes started by fabdirashid in D:\FAISAL_PROJECTS\AGENT CONNECT\api-gateway)
+2024-08-28 00:14:25 [main] INFO  c.f.a.ApiGatewayApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-28 00:14:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-28 00:14:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-28 00:14:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 39 ms. Found 0 Redis repository interfaces.
+2024-08-28 00:14:28 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=04263a67-33b1-312e-a7d6-d1e30152c9f1
+2024-08-28 00:14:28 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-28 00:14:28 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:14:28 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-28 00:14:28 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:14:28 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:14:30 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'customRouteLocator' defined in class path resource [com/faisaldev/api_gateway/config/GatewayConfig.class]: Failed to instantiate [org.springframework.cloud.gateway.route.RouteLocator]: Factory method 'customRouteLocator' threw exception with message: BurstCapacity(2) must be greater than or equal than replenishRate(10)
+2024-08-28 00:14:30 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-28 00:14:30 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'customRouteLocator' defined in class path resource [com/faisaldev/api_gateway/config/GatewayConfig.class]: Failed to instantiate [org.springframework.cloud.gateway.route.RouteLocator]: Factory method 'customRouteLocator' threw exception with message: BurstCapacity(2) must be greater than or equal than replenishRate(10)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.faisaldev.api_gateway.ApiGatewayApplication.main(ApiGatewayApplication.java:10)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cloud.gateway.route.RouteLocator]: Factory method 'customRouteLocator' threw exception with message: BurstCapacity(2) must be greater than or equal than replenishRate(10)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: BurstCapacity(2) must be greater than or equal than replenishRate(10)
+	at org.springframework.util.Assert.isTrue(Assert.java:111)
+	at org.springframework.cloud.gateway.filter.ratelimit.RedisRateLimiter$Config.setBurstCapacity(RedisRateLimiter.java:336)
+	at org.springframework.cloud.gateway.filter.ratelimit.RedisRateLimiter.<init>(RedisRateLimiter.java:133)
+	at com.faisaldev.api_gateway.config.GatewayConfig.lambda$customRouteLocator$0(GatewayConfig.java:21)
+	at org.springframework.cloud.gateway.filter.factory.GatewayFilterFactory.apply(GatewayFilterFactory.java:46)
+	at org.springframework.cloud.gateway.route.builder.GatewayFilterSpec.requestRateLimiter(GatewayFilterSpec.java:649)
+	at com.faisaldev.api_gateway.config.GatewayConfig.lambda$customRouteLocator$1(GatewayConfig.java:20)
+	at org.springframework.cloud.gateway.route.builder.BooleanSpec.filters(BooleanSpec.java:76)
+	at com.faisaldev.api_gateway.config.GatewayConfig.lambda$customRouteLocator$2(GatewayConfig.java:20)
+	at org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder$Builder.route(RouteLocatorBuilder.java:82)
+	at com.faisaldev.api_gateway.config.GatewayConfig.customRouteLocator(GatewayConfig.java:19)
+	at com.faisaldev.api_gateway.config.GatewayConfig$$SpringCGLIB$$0.CGLIB$customRouteLocator$0(<generated>)
+	at com.faisaldev.api_gateway.config.GatewayConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:348)
+	at com.faisaldev.api_gateway.config.GatewayConfig$$SpringCGLIB$$0.customRouteLocator(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:146)
+	... 20 common frames omitted
+2024-08-28 00:21:16 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-08-28 00:21:16 [main] INFO  c.f.a.ApiGatewayApplication - Starting ApiGatewayApplication using Java 21 with PID 1828 (D:\FAISAL_PROJECTS\AGENT CONNECT\api-gateway\target\classes started by fabdirashid in D:\FAISAL_PROJECTS\AGENT CONNECT\api-gateway)
+2024-08-28 00:21:16 [main] INFO  c.f.a.ApiGatewayApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-28 00:21:19 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-28 00:21:19 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-28 00:21:19 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37 ms. Found 0 Redis repository interfaces.
+2024-08-28 00:21:20 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=04263a67-33b1-312e-a7d6-d1e30152c9f1
+2024-08-28 00:21:21 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-28 00:21:21 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:21:21 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-28 00:21:21 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:21:21 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:21:23 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'customRouteLocator' defined in class path resource [com/faisaldev/api_gateway/config/GatewayConfig.class]: Failed to instantiate [org.springframework.cloud.gateway.route.RouteLocator]: Factory method 'customRouteLocator' threw exception with message: BurstCapacity(2) must be greater than or equal than replenishRate(10)
+2024-08-28 00:21:23 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-28 00:21:23 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'customRouteLocator' defined in class path resource [com/faisaldev/api_gateway/config/GatewayConfig.class]: Failed to instantiate [org.springframework.cloud.gateway.route.RouteLocator]: Factory method 'customRouteLocator' threw exception with message: BurstCapacity(2) must be greater than or equal than replenishRate(10)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.faisaldev.api_gateway.ApiGatewayApplication.main(ApiGatewayApplication.java:10)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cloud.gateway.route.RouteLocator]: Factory method 'customRouteLocator' threw exception with message: BurstCapacity(2) must be greater than or equal than replenishRate(10)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: BurstCapacity(2) must be greater than or equal than replenishRate(10)
+	at org.springframework.util.Assert.isTrue(Assert.java:111)
+	at org.springframework.cloud.gateway.filter.ratelimit.RedisRateLimiter$Config.setBurstCapacity(RedisRateLimiter.java:336)
+	at org.springframework.cloud.gateway.filter.ratelimit.RedisRateLimiter.<init>(RedisRateLimiter.java:133)
+	at com.faisaldev.api_gateway.config.GatewayConfig.lambda$customRouteLocator$0(GatewayConfig.java:21)
+	at org.springframework.cloud.gateway.filter.factory.GatewayFilterFactory.apply(GatewayFilterFactory.java:46)
+	at org.springframework.cloud.gateway.route.builder.GatewayFilterSpec.requestRateLimiter(GatewayFilterSpec.java:649)
+	at com.faisaldev.api_gateway.config.GatewayConfig.lambda$customRouteLocator$1(GatewayConfig.java:20)
+	at org.springframework.cloud.gateway.route.builder.BooleanSpec.filters(BooleanSpec.java:76)
+	at com.faisaldev.api_gateway.config.GatewayConfig.lambda$customRouteLocator$2(GatewayConfig.java:20)
+	at org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder$Builder.route(RouteLocatorBuilder.java:82)
+	at com.faisaldev.api_gateway.config.GatewayConfig.customRouteLocator(GatewayConfig.java:19)
+	at com.faisaldev.api_gateway.config.GatewayConfig$$SpringCGLIB$$0.CGLIB$customRouteLocator$0(<generated>)
+	at com.faisaldev.api_gateway.config.GatewayConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:348)
+	at com.faisaldev.api_gateway.config.GatewayConfig$$SpringCGLIB$$0.customRouteLocator(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:146)
+	... 20 common frames omitted
+2024-08-28 00:33:51 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-08-28 00:33:51 [main] INFO  c.f.a.ApiGatewayApplication - Starting ApiGatewayApplication using Java 21 with PID 26396 (D:\FAISAL_PROJECTS\AGENT CONNECT\api-gateway\target\classes started by fabdirashid in D:\FAISAL_PROJECTS\AGENT CONNECT\api-gateway)
+2024-08-28 00:33:51 [main] INFO  c.f.a.ApiGatewayApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-28 00:33:53 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-28 00:33:53 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-28 00:33:53 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 0 Redis repository interfaces.
+2024-08-28 00:33:54 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=04263a67-33b1-312e-a7d6-d1e30152c9f1
+2024-08-28 00:33:54 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-28 00:33:54 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:33:54 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-28 00:33:54 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:33:54 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:33:56 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'customRouteLocator' defined in class path resource [com/faisaldev/api_gateway/config/GatewayConfig.class]: Failed to instantiate [org.springframework.cloud.gateway.route.RouteLocator]: Factory method 'customRouteLocator' threw exception with message: BurstCapacity(2) must be greater than or equal than replenishRate(10)
+2024-08-28 00:33:56 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-28 00:33:56 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'customRouteLocator' defined in class path resource [com/faisaldev/api_gateway/config/GatewayConfig.class]: Failed to instantiate [org.springframework.cloud.gateway.route.RouteLocator]: Factory method 'customRouteLocator' threw exception with message: BurstCapacity(2) must be greater than or equal than replenishRate(10)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.faisaldev.api_gateway.ApiGatewayApplication.main(ApiGatewayApplication.java:10)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cloud.gateway.route.RouteLocator]: Factory method 'customRouteLocator' threw exception with message: BurstCapacity(2) must be greater than or equal than replenishRate(10)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: BurstCapacity(2) must be greater than or equal than replenishRate(10)
+	at org.springframework.util.Assert.isTrue(Assert.java:111)
+	at org.springframework.cloud.gateway.filter.ratelimit.RedisRateLimiter$Config.setBurstCapacity(RedisRateLimiter.java:336)
+	at org.springframework.cloud.gateway.filter.ratelimit.RedisRateLimiter.<init>(RedisRateLimiter.java:133)
+	at com.faisaldev.api_gateway.config.GatewayConfig.lambda$customRouteLocator$0(GatewayConfig.java:21)
+	at org.springframework.cloud.gateway.filter.factory.GatewayFilterFactory.apply(GatewayFilterFactory.java:46)
+	at org.springframework.cloud.gateway.route.builder.GatewayFilterSpec.requestRateLimiter(GatewayFilterSpec.java:649)
+	at com.faisaldev.api_gateway.config.GatewayConfig.lambda$customRouteLocator$1(GatewayConfig.java:20)
+	at org.springframework.cloud.gateway.route.builder.BooleanSpec.filters(BooleanSpec.java:76)
+	at com.faisaldev.api_gateway.config.GatewayConfig.lambda$customRouteLocator$2(GatewayConfig.java:20)
+	at org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder$Builder.route(RouteLocatorBuilder.java:82)
+	at com.faisaldev.api_gateway.config.GatewayConfig.customRouteLocator(GatewayConfig.java:19)
+	at com.faisaldev.api_gateway.config.GatewayConfig$$SpringCGLIB$$0.CGLIB$customRouteLocator$0(<generated>)
+	at com.faisaldev.api_gateway.config.GatewayConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:348)
+	at com.faisaldev.api_gateway.config.GatewayConfig$$SpringCGLIB$$0.customRouteLocator(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:146)
+	... 20 common frames omitted
+2024-08-28 00:35:07 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-08-28 00:35:07 [main] INFO  c.f.a.ApiGatewayApplication - Starting ApiGatewayApplication using Java 21 with PID 4760 (D:\FAISAL_PROJECTS\AGENT CONNECT\api-gateway\target\classes started by fabdirashid in D:\FAISAL_PROJECTS\AGENT CONNECT\api-gateway)
+2024-08-28 00:35:07 [main] INFO  c.f.a.ApiGatewayApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-28 00:35:09 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-28 00:35:09 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-28 00:35:10 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 72 ms. Found 0 Redis repository interfaces.
+2024-08-28 00:35:10 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=04263a67-33b1-312e-a7d6-d1e30152c9f1
+2024-08-28 00:35:10 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-28 00:35:10 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:35:10 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-28 00:35:10 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:35:10 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:35:12 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'customRouteLocator' defined in class path resource [com/faisaldev/api_gateway/config/GatewayConfig.class]: Failed to instantiate [org.springframework.cloud.gateway.route.RouteLocator]: Factory method 'customRouteLocator' threw exception with message: BurstCapacity(2) must be greater than or equal than replenishRate(10)
+2024-08-28 00:35:12 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-28 00:35:13 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'customRouteLocator' defined in class path resource [com/faisaldev/api_gateway/config/GatewayConfig.class]: Failed to instantiate [org.springframework.cloud.gateway.route.RouteLocator]: Factory method 'customRouteLocator' threw exception with message: BurstCapacity(2) must be greater than or equal than replenishRate(10)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.faisaldev.api_gateway.ApiGatewayApplication.main(ApiGatewayApplication.java:10)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cloud.gateway.route.RouteLocator]: Factory method 'customRouteLocator' threw exception with message: BurstCapacity(2) must be greater than or equal than replenishRate(10)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: BurstCapacity(2) must be greater than or equal than replenishRate(10)
+	at org.springframework.util.Assert.isTrue(Assert.java:111)
+	at org.springframework.cloud.gateway.filter.ratelimit.RedisRateLimiter$Config.setBurstCapacity(RedisRateLimiter.java:336)
+	at org.springframework.cloud.gateway.filter.ratelimit.RedisRateLimiter.<init>(RedisRateLimiter.java:133)
+	at com.faisaldev.api_gateway.config.GatewayConfig.lambda$customRouteLocator$0(GatewayConfig.java:21)
+	at org.springframework.cloud.gateway.filter.factory.GatewayFilterFactory.apply(GatewayFilterFactory.java:46)
+	at org.springframework.cloud.gateway.route.builder.GatewayFilterSpec.requestRateLimiter(GatewayFilterSpec.java:649)
+	at com.faisaldev.api_gateway.config.GatewayConfig.lambda$customRouteLocator$1(GatewayConfig.java:20)
+	at org.springframework.cloud.gateway.route.builder.BooleanSpec.filters(BooleanSpec.java:76)
+	at com.faisaldev.api_gateway.config.GatewayConfig.lambda$customRouteLocator$2(GatewayConfig.java:20)
+	at org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder$Builder.route(RouteLocatorBuilder.java:82)
+	at com.faisaldev.api_gateway.config.GatewayConfig.customRouteLocator(GatewayConfig.java:19)
+	at com.faisaldev.api_gateway.config.GatewayConfig$$SpringCGLIB$$0.CGLIB$customRouteLocator$0(<generated>)
+	at com.faisaldev.api_gateway.config.GatewayConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:348)
+	at com.faisaldev.api_gateway.config.GatewayConfig$$SpringCGLIB$$0.customRouteLocator(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:146)
+	... 20 common frames omitted
+2024-08-28 00:35:37 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-08-28 00:35:37 [main] INFO  c.f.a.ApiGatewayApplication - Starting ApiGatewayApplication using Java 21 with PID 41444 (D:\FAISAL_PROJECTS\AGENT CONNECT\api-gateway\target\classes started by fabdirashid in D:\FAISAL_PROJECTS\AGENT CONNECT\api-gateway)
+2024-08-28 00:35:37 [main] INFO  c.f.a.ApiGatewayApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-28 00:35:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-28 00:35:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-28 00:35:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 0 Redis repository interfaces.
+2024-08-28 00:35:40 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=04263a67-33b1-312e-a7d6-d1e30152c9f1
+2024-08-28 00:35:40 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-28 00:35:40 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:35:40 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-28 00:35:40 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:35:40 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:35:44 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2024-08-28 00:35:45 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
+2024-08-28 00:35:45 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
+2024-08-28 00:35:45 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
+2024-08-28 00:35:45 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
+2024-08-28 00:35:45 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
+2024-08-28 00:35:45 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
+2024-08-28 00:35:45 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
+2024-08-28 00:35:45 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
+2024-08-28 00:35:45 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
+2024-08-28 00:35:45 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
+2024-08-28 00:35:45 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
+2024-08-28 00:35:45 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2024-08-28 00:35:45 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
+2024-08-28 00:35:45 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2024-08-28 00:35:47 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2024-08-28 00:35:47 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2024-08-28 00:35:48 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2024-08-28 00:35:48 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-08-28 00:35:48 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-08-28 00:35:48 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2024-08-28 00:35:48 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-08-28 00:35:48 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2024-08-28 00:35:48 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2024-08-28 00:35:48 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2024-08-28 00:35:48 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2024-08-28 00:35:48 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2024-08-28 00:35:48 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2024-08-28 00:35:48 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2024-08-28 00:35:49 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2024-08-28 00:35:49 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2024-08-28 00:35:49 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-08-28 00:35:49 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1724794549522 with initial instances count: 1
+2024-08-28 00:35:49 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application API-GATEWAY-AGENT-CONNECT with eureka with status UP
+2024-08-28 00:35:49 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1724794549538, current=UP, previous=STARTING]
+2024-08-28 00:35:49 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY-AGENT-CONNECT/localhost:API-GATEWAY-AGENT-CONNECT:4001: registering service...
+2024-08-28 00:35:50 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY-AGENT-CONNECT/localhost:API-GATEWAY-AGENT-CONNECT:4001 - registration status: 204
+2024-08-28 00:35:50 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 4001 (http)
+2024-08-28 00:35:50 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 4001
+2024-08-28 00:35:51 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2024-08-28 00:35:52 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2024-08-28 00:35:52 [main] INFO  c.f.a.ApiGatewayApplication - Started ApiGatewayApplication in 17.713 seconds (process running for 19.633)
+2024-08-28 00:37:12 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application API-GATEWAY-AGENT-CONNECT with eureka with status DOWN
+2024-08-28 00:37:12 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1724794632207, current=DOWN, previous=UP]
+2024-08-28 00:37:12 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY-AGENT-CONNECT/localhost:API-GATEWAY-AGENT-CONNECT:4001: registering service...
+2024-08-28 00:37:12 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY-AGENT-CONNECT/localhost:API-GATEWAY-AGENT-CONNECT:4001 - registration status: 204
+2024-08-28 00:37:14 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2024-08-28 00:37:26 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-08-28 00:37:26 [main] INFO  c.f.a.ApiGatewayApplication - Starting ApiGatewayApplication using Java 21 with PID 26944 (D:\FAISAL_PROJECTS\AGENT CONNECT\api-gateway\target\classes started by fabdirashid in D:\FAISAL_PROJECTS\AGENT CONNECT\api-gateway)
+2024-08-28 00:37:26 [main] INFO  c.f.a.ApiGatewayApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-28 00:37:28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-28 00:37:28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-28 00:37:28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 43 ms. Found 0 Redis repository interfaces.
+2024-08-28 00:37:29 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=04263a67-33b1-312e-a7d6-d1e30152c9f1
+2024-08-28 00:37:29 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-28 00:37:29 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:37:29 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-28 00:37:29 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:37:29 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:37:32 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2024-08-28 00:37:33 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
+2024-08-28 00:37:33 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
+2024-08-28 00:37:33 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
+2024-08-28 00:37:33 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
+2024-08-28 00:37:33 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
+2024-08-28 00:37:33 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
+2024-08-28 00:37:33 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
+2024-08-28 00:37:33 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
+2024-08-28 00:37:33 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
+2024-08-28 00:37:33 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
+2024-08-28 00:37:33 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
+2024-08-28 00:37:33 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2024-08-28 00:37:33 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
+2024-08-28 00:37:33 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2024-08-28 00:37:35 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2024-08-28 00:37:35 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2024-08-28 00:37:36 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2024-08-28 00:37:36 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-08-28 00:37:36 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-08-28 00:37:36 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2024-08-28 00:37:36 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-08-28 00:37:36 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2024-08-28 00:37:36 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2024-08-28 00:37:36 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2024-08-28 00:37:36 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2024-08-28 00:37:36 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2024-08-28 00:37:36 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2024-08-28 00:37:36 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2024-08-28 00:37:38 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2024-08-28 00:37:38 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2024-08-28 00:37:38 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-08-28 00:37:38 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1724794658161 with initial instances count: 2
+2024-08-28 00:37:38 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application API-GATEWAY-AGENT-CONNECT with eureka with status UP
+2024-08-28 00:37:38 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1724794658181, current=UP, previous=STARTING]
+2024-08-28 00:37:38 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY-AGENT-CONNECT/localhost:API-GATEWAY-AGENT-CONNECT:4001: registering service...
+2024-08-28 00:37:38 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY-AGENT-CONNECT/localhost:API-GATEWAY-AGENT-CONNECT:4001 - registration status: 204
+2024-08-28 00:37:38 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 4001 (http)
+2024-08-28 00:37:38 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 4001
+2024-08-28 00:37:39 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2024-08-28 00:37:40 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2024-08-28 00:37:40 [main] INFO  c.f.a.ApiGatewayApplication - Started ApiGatewayApplication in 17.273 seconds (process running for 19.487)
+2024-08-28 00:38:13 [reactor-http-nio-2] INFO  c.f.a.f.RequestAndResponseLogFilter - Incoming request: GET http://localhost:4001/api/v1/agent-connect/user
+2024-08-28 00:38:13 [reactor-http-nio-2] WARN  o.s.c.l.core.RoundRobinLoadBalancer - No servers available for service: USER-SERVICE
+2024-08-28 00:41:33 [reactor-http-nio-4] INFO  c.f.a.f.RequestAndResponseLogFilter - Incoming request: GET http://localhost:4001/api/v1/agent-connect/user
+2024-08-28 00:41:33 [reactor-http-nio-4] WARN  o.s.c.l.core.RoundRobinLoadBalancer - No servers available for service: USER-SERVICE
+2024-08-28 00:41:42 [reactor-http-nio-7] INFO  c.f.a.f.RequestAndResponseLogFilter - Incoming request: GET http://localhost:4001/api/v1/agent-connect/user
+2024-08-28 00:41:42 [reactor-http-nio-7] WARN  o.s.c.l.core.RoundRobinLoadBalancer - No servers available for service: USER-SERVICE
+2024-08-28 00:42:37 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-08-28 00:43:43 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application API-GATEWAY-AGENT-CONNECT with eureka with status DOWN
+2024-08-28 00:43:43 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1724795023182, current=DOWN, previous=UP]
+2024-08-28 00:43:43 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY-AGENT-CONNECT/localhost:API-GATEWAY-AGENT-CONNECT:4001: registering service...
+2024-08-28 00:43:43 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY-AGENT-CONNECT/localhost:API-GATEWAY-AGENT-CONNECT:4001 - registration status: 204
+2024-08-28 00:43:45 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2024-08-28 00:43:48 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2024-08-28 00:43:48 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY-AGENT-CONNECT/localhost:API-GATEWAY-AGENT-CONNECT:4001 - deregister  status: 200
+2024-08-28 00:43:48 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2024-08-28 00:44:13 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-08-28 00:44:13 [main] INFO  c.f.a.ApiGatewayApplication - Starting ApiGatewayApplication using Java 21 with PID 24988 (D:\FAISAL_PROJECTS\AGENT CONNECT\api-gateway\target\classes started by fabdirashid in D:\FAISAL_PROJECTS\AGENT CONNECT\api-gateway)
+2024-08-28 00:44:13 [main] INFO  c.f.a.ApiGatewayApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-28 00:44:15 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-28 00:44:15 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-28 00:44:15 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 0 Redis repository interfaces.
+2024-08-28 00:44:16 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=04263a67-33b1-312e-a7d6-d1e30152c9f1
+2024-08-28 00:44:16 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-28 00:44:16 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:44:16 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-28 00:44:16 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:44:16 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:44:21 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2024-08-28 00:44:21 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
+2024-08-28 00:44:21 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
+2024-08-28 00:44:21 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
+2024-08-28 00:44:21 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
+2024-08-28 00:44:21 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
+2024-08-28 00:44:21 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
+2024-08-28 00:44:21 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
+2024-08-28 00:44:21 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
+2024-08-28 00:44:21 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
+2024-08-28 00:44:21 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
+2024-08-28 00:44:21 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
+2024-08-28 00:44:21 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2024-08-28 00:44:21 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
+2024-08-28 00:44:21 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2024-08-28 00:44:23 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2024-08-28 00:44:23 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2024-08-28 00:44:24 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2024-08-28 00:44:24 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-08-28 00:44:24 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-08-28 00:44:24 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2024-08-28 00:44:24 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-08-28 00:44:24 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2024-08-28 00:44:24 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2024-08-28 00:44:24 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2024-08-28 00:44:24 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2024-08-28 00:44:24 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2024-08-28 00:44:24 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2024-08-28 00:44:24 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2024-08-28 00:44:26 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2024-08-28 00:44:26 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2024-08-28 00:44:26 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-08-28 00:44:26 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1724795066210 with initial instances count: 1
+2024-08-28 00:44:26 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application API-GATEWAY-AGENT-CONNECT with eureka with status UP
+2024-08-28 00:44:26 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1724795066244, current=UP, previous=STARTING]
+2024-08-28 00:44:26 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY-AGENT-CONNECT/localhost:API-GATEWAY-AGENT-CONNECT:4001: registering service...
+2024-08-28 00:44:26 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY-AGENT-CONNECT/localhost:API-GATEWAY-AGENT-CONNECT:4001 - registration status: 204
+2024-08-28 00:44:26 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 4001 (http)
+2024-08-28 00:44:26 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 4001
+2024-08-28 00:44:27 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2024-08-28 00:44:28 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2024-08-28 00:44:28 [main] INFO  c.f.a.ApiGatewayApplication - Started ApiGatewayApplication in 17.697 seconds (process running for 19.897)
+2024-08-28 00:44:31 [reactor-http-nio-2] INFO  c.f.a.f.RequestAndResponseLogFilter - Incoming request: GET http://localhost:4001/api/v1/agent-connect/user
+2024-08-28 00:44:31 [reactor-http-nio-2] INFO  c.f.a.f.RequestAndResponseLogFilter - Outgoing response: 403 FORBIDDEN http://localhost:4001/api/v1/agent-connect/user
+2024-08-28 00:48:48 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application API-GATEWAY-AGENT-CONNECT with eureka with status DOWN
+2024-08-28 00:48:48 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1724795328422, current=DOWN, previous=UP]
+2024-08-28 00:48:48 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY-AGENT-CONNECT/localhost:API-GATEWAY-AGENT-CONNECT:4001: registering service...
+2024-08-28 00:48:48 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY-AGENT-CONNECT/localhost:API-GATEWAY-AGENT-CONNECT:4001 - registration status: 204
+2024-08-28 00:48:50 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2024-08-28 00:48:53 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2024-08-28 00:48:53 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY-AGENT-CONNECT/localhost:API-GATEWAY-AGENT-CONNECT:4001 - deregister  status: 200
+2024-08-28 00:48:53 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2024-08-28 00:49:05 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-08-28 00:49:05 [main] INFO  c.f.a.ApiGatewayApplication - Starting ApiGatewayApplication using Java 21 with PID 22120 (D:\FAISAL_PROJECTS\AGENT CONNECT\api-gateway\target\classes started by fabdirashid in D:\FAISAL_PROJECTS\AGENT CONNECT\api-gateway)
+2024-08-28 00:49:05 [main] INFO  c.f.a.ApiGatewayApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-28 00:49:07 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-28 00:49:07 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-28 00:49:07 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 41 ms. Found 0 Redis repository interfaces.
+2024-08-28 00:49:08 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=04263a67-33b1-312e-a7d6-d1e30152c9f1
+2024-08-28 00:49:08 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-28 00:49:08 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:49:08 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-28 00:49:08 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:49:08 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-28 00:49:10 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'customRouteLocator' defined in class path resource [com/faisaldev/api_gateway/config/GatewayConfig.class]: Failed to instantiate [org.springframework.cloud.gateway.route.RouteLocator]: Factory method 'customRouteLocator' threw exception with message: BurstCapacity(10) must be greater than or equal than replenishRate(20)
+2024-08-28 00:49:10 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-28 00:49:10 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'customRouteLocator' defined in class path resource [com/faisaldev/api_gateway/config/GatewayConfig.class]: Failed to instantiate [org.springframework.cloud.gateway.route.RouteLocator]: Factory method 'customRouteLocator' threw exception with message: BurstCapacity(10) must be greater than or equal than replenishRate(20)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.faisaldev.api_gateway.ApiGatewayApplication.main(ApiGatewayApplication.java:10)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cloud.gateway.route.RouteLocator]: Factory method 'customRouteLocator' threw exception with message: BurstCapacity(10) must be greater than or equal than replenishRate(20)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: BurstCapacity(10) must be greater than or equal than replenishRate(20)
+	at org.springframework.util.Assert.isTrue(Assert.java:111)
+	at org.springframework.cloud.gateway.filter.ratelimit.RedisRateLimiter$Config.setBurstCapacity(RedisRateLimiter.java:336)
+	at org.springframework.cloud.gateway.filter.ratelimit.RedisRateLimiter.<init>(RedisRateLimiter.java:133)
+	at com.faisaldev.api_gateway.config.GatewayConfig.lambda$customRouteLocator$0(GatewayConfig.java:21)
+	at org.springframework.cloud.gateway.filter.factory.GatewayFilterFactory.apply(GatewayFilterFactory.java:46)
+	at org.springframework.cloud.gateway.route.builder.GatewayFilterSpec.requestRateLimiter(GatewayFilterSpec.java:649)
+	at com.faisaldev.api_gateway.config.GatewayConfig.lambda$customRouteLocator$1(GatewayConfig.java:20)
+	at org.springframework.cloud.gateway.route.builder.BooleanSpec.filters(BooleanSpec.java:76)
+	at com.faisaldev.api_gateway.config.GatewayConfig.lambda$customRouteLocator$2(GatewayConfig.java:20)
+	at org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder$Builder.route(RouteLocatorBuilder.java:82)
+	at com.faisaldev.api_gateway.config.GatewayConfig.customRouteLocator(GatewayConfig.java:19)
+	at com.faisaldev.api_gateway.config.GatewayConfig$$SpringCGLIB$$0.CGLIB$customRouteLocator$0(<generated>)
+	at com.faisaldev.api_gateway.config.GatewayConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:348)
+	at com.faisaldev.api_gateway.config.GatewayConfig$$SpringCGLIB$$0.customRouteLocator(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:146)
+	... 20 common frames omitted

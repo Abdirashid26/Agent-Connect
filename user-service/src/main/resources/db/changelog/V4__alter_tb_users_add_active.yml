@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4
+      author: faisaldev
+      changes:
+        - addColumn:
+            tableName: tb_users
+            columns:
+              - column:
+                  name: active
+                  type: boolean
+                  defaultValue: false
+                  constraints:
+                    nullable: false
