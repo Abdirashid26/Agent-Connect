@@ -8,9 +8,11 @@
 - **Locate Agents**: Use the app to view and locate agents nearby for quick and convenient transactions.
 - **Earn Commissions**: Receive commissions for providing withdrawal and deposit services, turning your wallet into an income-generating tool.
 - **Standard Wallet Functions**: Enjoy all the regular features of your digital wallet including:
-  - Business Intelligence (BI)
-  - Financial Transactions (FT)
+  - Balance Inquiry (BI)
+  - Funds Transfers (FT)
   - Buy Airtime
+  - Send Money
+  - Bill Payment
 
 ## How It Works
 
