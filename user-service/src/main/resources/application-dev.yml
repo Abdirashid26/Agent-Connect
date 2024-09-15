@@ -29,6 +29,17 @@ spring:
             destination: create-credentials-agent-connect-topic
             group: create-credentials-agent-connect
 
+
+security:
+  jwt:
+    key:
+      name: authorization.p12
+      alias: faisaldev
+      password: faisal26
+    expiration-time: 3600000
+
+
+
 logging:
   level:
     liquibase: DEBUG

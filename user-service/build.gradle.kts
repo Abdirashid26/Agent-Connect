@@ -40,6 +40,15 @@ dependencies {
 	implementation("org.springframework.cloud:spring-cloud-stream:4.1.3")
 	implementation("org.springframework.cloud:spring-cloud-stream-binder-kafka:4.1.3")
 
+	//JWT
+	implementation("io.jsonwebtoken:jjwt-api:0.12.6")
+	implementation("io.jsonwebtoken:jjwt-impl:0.12.6") // Replace with the latest version
+	implementation("io.jsonwebtoken:jjwt-jackson:0.12.6")
+
+	//SECURITY
+	implementation("org.springframework.boot:spring-boot-starter-security")
+	testImplementation("org.springframework.security:spring-security-test")
+
 
 	runtimeOnly("org.postgresql:postgresql")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")

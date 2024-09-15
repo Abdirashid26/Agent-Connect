@@ -13,5 +13,7 @@ interface UserService {
 
     suspend fun activateUserAccount(phoneNumber : String) : User?
 
+    suspend fun getUserProfile(username : String) : User?
+
 
 }

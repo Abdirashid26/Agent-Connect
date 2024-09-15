@@ -2,6 +2,7 @@ package com.faisaldev.user_service.controller
 
 import com.faisaldev.user_service.error_handlers.GlobalException
 import com.faisaldev.user_service.models.OtpDto
+import com.faisaldev.user_service.models.User
 import com.faisaldev.user_service.models.UserDto
 import com.faisaldev.user_service.services.OtpService
 import com.faisaldev.user_service.services.UserService
@@ -25,6 +26,19 @@ class UserController(
     private val gson : Gson
 ){
 
+
+    @PostMapping("/user")
+    suspend fun getUserProfile(
+        @RequestHeader("username") username: String
+    )  : ResponseEntity<GlobalResponse<User?>>{
+        println("USERNAME : ${username}")
+        val userProfile = userService.getUserProfile(username)
+        return  if (userProfile == null){
+            ResponseEntity.ok(GlobalResponse(GlobalStatus.SUCCESS.status, "User does not exist", null))
+        }else{
+            ResponseEntity.ok(GlobalResponse(GlobalStatus.SUCCESS.status, "User profile info", userProfile))
+        }
+    }
 
 
     @PostMapping("/createUserAccount", consumes = [MediaType.MULTIPART_FORM_DATA_VALUE])

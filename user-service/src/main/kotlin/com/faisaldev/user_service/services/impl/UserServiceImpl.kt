@@ -78,5 +78,9 @@ class UserServiceImpl(
         }
     }
 
+    override suspend fun getUserProfile(username: String): User? {
+        return usersRepository.findByPhoneNumber(username)
+    }
+
 
 }
