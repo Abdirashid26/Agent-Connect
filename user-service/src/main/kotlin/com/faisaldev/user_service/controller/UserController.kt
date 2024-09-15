@@ -79,6 +79,7 @@ class UserController(
     suspend fun generateOtp(
         @RequestBody generateOtp : OtpDto
     ) : ResponseEntity<GlobalResponse<String>>{
+
         otpService.generateOtp(generateOtp.phoneNumber)
         return ResponseEntity.ok().body(
             GlobalResponse(
