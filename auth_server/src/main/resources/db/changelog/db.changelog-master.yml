@@ -1,3 +1,7 @@
 databaseChangeLog:
   - include:
+        file: db/changelog/V1__add_users_and_roles_table.yml
+  - include:
       file: db/changelog/V2__add_roles_string.yml
+  - include:
+      file: db/changelog/V3__add_basic_users_table.yml

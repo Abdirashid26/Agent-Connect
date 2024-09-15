@@ -39,6 +39,7 @@ class SubscriberServiceImpl(
     // Map UserDto to User entity
     private fun mapToUserEntity(userDto: UserDto): User {
         val password = generateFourDigitPassword()
+        println("GENERATED_TEST_PASSWORD : ${password}") // this will send a sms
         return User(
             username = userDto.phoneNumber,
             password =  passwordEncoder.encode(password), // You should hash this in a real use case

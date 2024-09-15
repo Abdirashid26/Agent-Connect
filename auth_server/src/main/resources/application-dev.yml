@@ -45,10 +45,19 @@ logging:
       springframework:
         data:
           r2dbc: DEBUG
+        security: DEBUG
     io:
-      r2dbc : DEBUG
+      r2dbc: DEBUG
 
 
+
+
+
+
+basic:
+  auth:
+    username: faisaldev
+    password : faisal26
 
 eureka:
   client:

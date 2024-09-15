@@ -1,6 +1,8 @@
 spring:
   application:
     name: API-GATEWAY-AGENT-CONNECT
+  profiles:
+    active: dev
 
 
 server:

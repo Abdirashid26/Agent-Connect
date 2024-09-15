@@ -1,3 +1,9 @@
 databaseChangeLog:
   - include:
+      file: db/changelog/V1__create_users_table.yml
+  - include:
+      file: db/changelog/V2__add_columns_to_users_table.yml
+  - include:
+      file: db/changelog/V3__add_tb_otps_table.yml
+  - include:
       file: db/changelog/V4__alter_tb_users_add_active.yml

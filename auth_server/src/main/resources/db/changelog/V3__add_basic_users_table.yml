@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: faisaldev
+      changes:
+        - createTable:
+            tableName: tb_basic_users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: username
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: password
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
