@@ -31,6 +31,8 @@ dependencies {
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 	implementation("org.liquibase:liquibase-core")
 	implementation("io.jsonwebtoken:jjwt-api:0.12.6")
+	implementation("io.jsonwebtoken:jjwt-impl:0.12.6") // Replace with the latest version
+	implementation("io.jsonwebtoken:jjwt-jackson:0.12.6")
 	implementation("org.postgresql:r2dbc-postgresql:1.0.5.RELEASE")
 	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
 	runtimeOnly("org.postgresql:postgresql")

@@ -22,8 +22,18 @@ data class User(
     @Column("role_ids")
     var roleIds: String = ""
 ) {
+
+
     fun getRoleIdList(): List<Long> {
-        return roleIds.split(",").mapNotNull { it.toLongOrNull() }
+        // Remove the square brackets and trim any extra spaces
+        val cleanedRoleIds = roleIds
+            .replace("[", "")
+            .replace("]", "")
+            .trim()
+
+        // Split by commas, convert to Long, and filter out null values
+        return cleanedRoleIds.split(",")
+            .mapNotNull { it.toLongOrNull() }
     }
 
     fun setRoleIdList(ids: List<Long>) {

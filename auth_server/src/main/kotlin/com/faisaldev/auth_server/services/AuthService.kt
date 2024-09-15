@@ -1,7 +1,12 @@
 package com.faisaldev.auth_server.services
 
+import com.faisaldev.auth_server.configs.JwtService
+import com.faisaldev.auth_server.dtos.LoginDto
+import com.faisaldev.auth_server.dtos.LoginResponseDto
 import com.faisaldev.auth_server.repositories.RoleRepository
 import com.faisaldev.auth_server.repositories.UserRepository
+import com.faisaldev.user_service.utils.GlobalResponse
+import com.faisaldev.user_service.utils.GlobalStatus
 import kotlinx.coroutines.runBlocking
 import org.springframework.security.core.userdetails.ReactiveUserDetailsService
 import org.springframework.security.core.userdetails.UserDetails
@@ -13,9 +18,12 @@ import reactor.core.publisher.Mono
 @Service
 class AuthService(
     private val userRepository: UserRepository,
-    private val roleRepository: RoleRepository
-): ReactiveUserDetailsService {
-    override fun findByUsername(username: String?): Mono<UserDetails> {
+    private val roleRepository: RoleRepository,
+    private val jwtService: JwtService
+) {
+
+
+     fun findByUsername(username: String?): Mono<UserDetails> {
         return userRepository.findByUsername(username ?: "")
             .flatMap { user ->
                 if (user != null) {
@@ -38,6 +46,25 @@ class AuthService(
                     Mono.error(UsernameNotFoundException("User not found"))
                 }
             }
+    }
+
+
+    fun login(loginDto: LoginDto) : Mono<GlobalResponse<LoginResponseDto>> {
+        return findByUsername(loginDto.username)
+            .map{ user ->
+                println("LOGIN: $user")
+                val token : String = jwtService.generateToken(
+                    mapOf(
+                    "username" to loginDto.username ,
+                        "roles" to user.authorities
+                        ),
+                    user)
+
+                val loginResponse = LoginResponseDto(user.username,token)
+
+                return@map GlobalResponse(GlobalStatus.SUCCESS.status,"Login is successfull",loginResponse)
+            }
+            .switchIfEmpty(Mono.error(UsernameNotFoundException("User not found")))
     }
 
 
