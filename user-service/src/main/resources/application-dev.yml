@@ -28,6 +28,9 @@ spring:
           create-credentials-agent-connect-topic-out-0:
             destination: create-credentials-agent-connect-topic
             group: create-credentials-agent-connect
+          create-customer-wallet-topic-out-0:
+            destination: create-customer-wallet-topic
+            group: create-customer-wallet-group
 
 
 security:

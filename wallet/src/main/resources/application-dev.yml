@@ -24,10 +24,13 @@ spring:
         binder:
           autoCreateTopics: true
           brokers: 10.20.2.19:9092
-        bindings:
-          create-wallet-account-topic-out-0:
-            destination: create-wallet-account-topic
-            group: create-wallet-account-group
+      bindings:
+        createCustomerWalletAccount-in-0:
+          destination: create-customer-wallet-topic
+          group: create-customer-wallet-group
+    function:
+      definition: createCustomerWalletAccount
+
 
 
 

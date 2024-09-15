@@ -20,6 +20,7 @@ class PublishingServiceImpl(
     fun createUserCredentials(userDto: UserDto) {
         Mono.fromRunnable<Any> {
             streamBridge.send(KafkaTopics.CREATE_AUTH_CREDENTIALS, gson.toJson(userDto))
+            streamBridge.send(KafkaTopics.CREATE_CUSTOMER_WALLET, gson.toJson(userDto))
         }.publishOn(Schedulers.boundedElastic()).subscribeOn(Schedulers.boundedElastic()).subscribe()
     }
 

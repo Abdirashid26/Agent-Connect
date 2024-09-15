@@ -13,8 +13,10 @@ import java.time.LocalDateTime
 @Table(name = "tb_accounts")
 data class Wallet(
 
-    // Primary key: User's phone number
     @Id
+    val id : Long? = null,
+
+    // Primary key: User's phone number
     val phoneNumber: String,
 
     // Unique account number for the wallet
@@ -65,8 +67,8 @@ data class Wallet(
     // Identifier for any linked external services or accounts (optional)
     var externalAccountId: String? = null,
 
-    // Wallet type (e.g., PERSONAL, BUSINESS)
-    var walletType: String = "PERSONAL",
+    // Wallet type (e.g., CUSTOMER, AGENT)
+    var walletType: String = "CUSTOMER",
 
     // Last transaction timestamp
     var lastTransactionAt: LocalDateTime? = null,
