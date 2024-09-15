@@ -11,9 +11,19 @@ spring:
       host: 10.20.2.25
       port: 6379
 
+security:
+  jwt:
+    key:
+      name: authorization.p12
+      alias: faisaldev
+      password: faisal26
+    expiration-time: 3600000
+
+
 logging:
   level:
     org.springframework.cloud.gateway: DEBUG
+    org.springframework.security: DEBUG
     org.springframework.data.redis: DEBUG
 
 basic:

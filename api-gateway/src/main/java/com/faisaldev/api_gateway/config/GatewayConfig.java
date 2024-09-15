@@ -37,6 +37,9 @@ public class GatewayConfig {
                 .route(p -> p.path(BASE_URI_PATH + "user-service/**")
                         .uri("lb://USER-AGENT-CONNECT"))
 
+                .route(p -> p.path(BASE_URI_PATH + "wallet-service/**")
+                        .uri("lb://WALLET-SERVICE"))
+
                 .route(p -> p.path(BASE_URI_PATH + "auth-service/**")
                         .filters(f -> f.addRequestHeader(
                                 HttpHeaders.AUTHORIZATION,

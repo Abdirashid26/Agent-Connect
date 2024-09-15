@@ -1,1 +1,8 @@
-spring.application.name=wallet
+spring:
+  application:
+    name: Wallet-Service
+  profiles:
+    active: dev
+
+server:
+  port: 4004

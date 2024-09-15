@@ -1,0 +1,144 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: faisaldev
+      changes:
+        - createTable:
+            tableName: tb_accounts
+            columns:
+              - column:
+                  name: phone_number
+                  type: varchar(20)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    unique: true
+              - column:
+                  name: account_number
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: actual_balance
+                  type: numeric(19, 2)
+                  constraints:
+                    nullable: false
+                    defaultValueNumeric: 0
+              - column:
+                  name: available_balance
+                  type: numeric(19, 2)
+                  constraints:
+                    nullable: false
+                    defaultValueNumeric: 0
+              - column:
+                  name: allowed_credit
+                  type: numeric(19, 2)
+                  constraints:
+                    nullable: false
+                    defaultValueNumeric: 0
+              - column:
+                  name: allowed_debit
+                  type: numeric(19, 2)
+                  constraints:
+                    nullable: false
+                    defaultValueNumeric: 0
+              - column:
+                  name: currency
+                  type: varchar(3)
+                  constraints:
+                    nullable: false
+                    defaultValue: 'KES'
+              - column:
+                  name: status
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+                    defaultValue: 'ACTIVE'
+              - column:
+                  name: is_locked
+                  type: boolean
+                  constraints:
+                    nullable: false
+                    defaultValueBoolean: false
+              - column:
+                  name: is_frozen
+                  type: boolean
+                  constraints:
+                    nullable: false
+                    defaultValueBoolean: false
+              - column:
+                  name: fee
+                  type: numeric(19, 2)
+                  constraints:
+                    nullable: false
+                    defaultValueNumeric: 0
+              - column:
+                  name: overdraft_limit
+                  type: numeric(19, 2)
+                  constraints:
+                    nullable: false
+                    defaultValueNumeric: 0
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: expiry_date
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: is_active
+                  type: boolean
+                  constraints:
+                    nullable: false
+                    defaultValueBoolean: true
+              - column:
+                  name: external_account_id
+                  type: varchar(50)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: wallet_type
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+                    defaultValue: 'PERSONAL'
+              - column:
+                  name: last_transaction_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: compliance_status
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+                    defaultValue: 'COMPLIANT'
+              - column:
+                  name: notes
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+
+  - changeSet:
+      id: 2
+      author: faisaldev
+      changes:
+        - addUniqueConstraint:
+            columnNames: phone_number
+            tableName: tb_accounts
+            constraintName: uq_tb_accounts_phone_number
+        - addUniqueConstraint:
+            columnNames: account_number
+            tableName: tb_accounts
+            constraintName: uq_tb_accounts_account_number
