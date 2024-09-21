@@ -2,9 +2,12 @@ package com.faisaldev.wallet.controller
 
 import com.faisaldev.user_service.utils.GlobalResponse
 import com.faisaldev.user_service.utils.GlobalStatus
+import com.faisaldev.wallet.dto.BalanceInquiryRequest
+import com.faisaldev.wallet.dto.BalanceInquiryResponse
 import com.faisaldev.wallet.dto.GetWalletAccountsDto
 import com.faisaldev.wallet.model.Wallet
 import com.faisaldev.wallet.service.WalletService
+import org.springframework.http.HttpStatusCode
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -19,10 +22,19 @@ class WalletController(
 ){
 
 
-    @PostMapping("test")
-    suspend fun walletTest() : ResponseEntity<String>{
-        return ResponseEntity.ok().body("Test")
+    /**
+     * Balance Inquiry API
+     */
+    @PostMapping("/balance-inquiry")
+    suspend fun performBalanceInquiry(
+        @RequestBody balanceInquiryRequest: BalanceInquiryRequest
+    ) : ResponseEntity<GlobalResponse<BalanceInquiryResponse>>{
+        val globalResponse = walletService.performBalanceInquiry(balanceInquiryRequest)
+        return ResponseEntity.ok().body(globalResponse)
     }
+
+
+
 
 
     @PostMapping("/wallet-accounts")

@@ -6,5 +6,6 @@ import org.springframework.data.repository.kotlin.CoroutineCrudRepository
 interface WalletRepository : CoroutineCrudRepository<Wallet, Long> {
 
     suspend fun findAllByPhoneNumber(phone: String): List<Wallet>?
+    suspend fun findByPhoneNumber(phone: String): Wallet?
 
 }

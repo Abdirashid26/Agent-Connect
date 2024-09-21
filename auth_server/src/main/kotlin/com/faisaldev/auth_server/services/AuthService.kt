@@ -7,10 +7,9 @@ import com.faisaldev.auth_server.repositories.RoleRepository
 import com.faisaldev.auth_server.repositories.UserRepository
 import com.faisaldev.user_service.utils.GlobalResponse
 import com.faisaldev.user_service.utils.GlobalStatus
-import kotlinx.coroutines.runBlocking
-import org.springframework.security.core.userdetails.ReactiveUserDetailsService
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UsernameNotFoundException
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Mono
 
@@ -19,11 +18,12 @@ import reactor.core.publisher.Mono
 class AuthService(
     private val userRepository: UserRepository,
     private val roleRepository: RoleRepository,
-    private val jwtService: JwtService
+    private val jwtService: JwtService,
+    private val passwordEncoder: BCryptPasswordEncoder
 ) {
 
 
-     fun findByUsername(username: String?): Mono<UserDetails> {
+    fun findByUsername(username: String?): Mono<UserDetails> {
         return userRepository.findByUsername(username ?: "")
             .flatMap { user ->
                 if (user != null) {
@@ -66,6 +66,20 @@ class AuthService(
             }
             .switchIfEmpty(Mono.error(UsernameNotFoundException("User not found")))
     }
+
+     fun validatePin(loginDto: LoginDto) : Mono<GlobalResponse<String>> {
+
+         return findByUsername(loginDto.username)
+             .map{ user ->
+                 println("LOGIN: $user")
+                 if (!passwordEncoder.encode(loginDto.password).equals(user.password)) {
+                     return@map GlobalResponse(GlobalStatus.FAILURE.status,"Pin validation failed","Pin Validation Failed")
+                 }
+                 return@map GlobalResponse(GlobalStatus.SUCCESS.status,"Pin validated successfully","Pin validated")
+             }
+             .switchIfEmpty(Mono.error(UsernameNotFoundException("User not found")))
+
+     }
 
 
 }

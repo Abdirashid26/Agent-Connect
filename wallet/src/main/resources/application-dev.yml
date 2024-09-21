@@ -46,6 +46,10 @@ logging:
       r2dbc : DEBUG
 
 
+
+service:
+  auth: http://localhost:4001/api/v1/agent-connect/auth-service/
+
 eureka:
   client:
     service-url:

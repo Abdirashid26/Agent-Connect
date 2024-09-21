@@ -33,4 +33,15 @@ class AuthController(
     }
 
 
+    @PostMapping("/validate-pin")
+    suspend fun validatePin(
+        @RequestBody loginDto: LoginDto
+    ) : Mono<ResponseEntity<GlobalResponse<String>>>{
+        return authService.validatePin(loginDto)
+            .map { res ->
+                ResponseEntity.ok().body(res)
+            }
+    }
+
+
 }

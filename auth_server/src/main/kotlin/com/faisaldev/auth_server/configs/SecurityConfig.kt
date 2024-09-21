@@ -43,7 +43,10 @@ class SecurityConfig(
         return http
             .authorizeExchange { exchanges ->
                 exchanges
-                    .pathMatchers("/public/**").permitAll()
+                    .pathMatchers(
+                        "/public/**",
+                        "/api/v1/agent-connect/auth-service/validate-pin"
+                        ).permitAll()
                     .anyExchange().authenticated()
             }
             .httpBasic { basicSpec ->
