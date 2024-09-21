@@ -4,6 +4,7 @@ import com.faisaldev.auth_server.dtos.LoginDto
 import com.faisaldev.auth_server.dtos.LoginResponseDto
 import com.faisaldev.auth_server.services.AuthService
 import com.faisaldev.user_service.utils.GlobalResponse
+import com.faisaldev.user_service.utils.GlobalStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -34,12 +35,22 @@ class AuthController(
 
 
     @PostMapping("/validate-pin")
-    suspend fun validatePin(
+    fun validatePin(
         @RequestBody loginDto: LoginDto
-    ) : Mono<ResponseEntity<GlobalResponse<String>>>{
+    ): Mono<ResponseEntity<GlobalResponse<String>>> {
         return authService.validatePin(loginDto)
-            .map { res ->
-                ResponseEntity.ok().body(res)
+            .map { response ->
+                ResponseEntity.ok(response)
+            }
+            .onErrorResume { ex ->
+                Mono.just(ResponseEntity
+                    .status(500)
+                    .body(GlobalResponse(
+                        status = GlobalStatus.FAILURE.status,
+                        message = "An error occurred: ${ex.message}",
+                        data = null
+                    ))
+                )
             }
     }
 
