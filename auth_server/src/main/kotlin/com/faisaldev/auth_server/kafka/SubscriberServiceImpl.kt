@@ -45,7 +45,7 @@ class SubscriberServiceImpl(
             password =  passwordEncoder.encode(password), // You should hash this in a real use case
             email = "${userDto.firstName}.${userDto.lastName}@example.com",
             active = true,
-            roleIds = listOf(1).toString()  // WILL BE 1 (ROLE_CUSTOMER) BY DEFAULT BUT LATER AFTER AGENTS INTRODUCTION WILL BE CHANGED
+            profileId = 123 // 123 represents Customer in Roles Table
         )
     }
 

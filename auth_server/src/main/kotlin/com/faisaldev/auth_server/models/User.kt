@@ -17,29 +17,9 @@ data class User(
     var createDate: LocalDateTime = LocalDateTime.now(),
     var lastModifiedDate: LocalDateTime = LocalDateTime.now(),
     var lastLogin: LocalDateTime? = null,
-
-    // Role IDs stored as a comma-separated string
-    @Column("role_ids")
-    var roleIds: String = ""
-) {
-
-
-    fun getRoleIdList(): List<Long> {
-        // Remove the square brackets and trim any extra spaces
-        val cleanedRoleIds = roleIds
-            .replace("[", "")
-            .replace("]", "")
-            .trim()
-
-        // Split by commas, convert to Long, and filter out null values
-        return cleanedRoleIds.split(",")
-            .mapNotNull { it.toLongOrNull() }
-    }
-
-    fun setRoleIdList(ids: List<Long>) {
-        roleIds = ids.joinToString(",")
-    }
-}
+    @Column("profile_id")
+    var profileId: Int = 1  //  Check the Roles table to see what the profileId represent
+)
 
 
 data class UserDto(

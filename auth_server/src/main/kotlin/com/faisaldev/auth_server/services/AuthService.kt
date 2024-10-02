@@ -29,21 +29,17 @@ class AuthService(
         return userRepository.findByUsername(username ?: "")
             .flatMap { user ->
                 if (user != null) {
-                    val roleIds = user.getRoleIdList() // Get list of role IDs from the user entity
-                    if (roleIds.isEmpty()) {
-                        Mono.error(UsernameNotFoundException("User has no roles assigned"))
-                    } else {
-                        roleRepository.findByIdIn(roleIds) // Fetch roles based on IDs
-                            .collectList()
-                            .map { roles ->
-                                val roleNames = roles.map { it.roleName }
+                    val profileId = user.profileId // Get Profile Id
+                        roleRepository.findByProfileId(profileId) // Fetch roles based on IDs
+                            .switchIfEmpty(Mono.error(UsernameNotFoundException("User does not have a Role")))
+                            .map { role ->
+                                val roleNames = role.rolesList.split(",").map{ it } // return CUSTOMER,CREATE_PROFILE
                                 val userDetails = org.springframework.security.core.userdetails.User.withUsername(user.username)
                                     .password(user.password) // Assuming password is already encoded
-                                    .roles(*roleNames.toTypedArray()) // Convert list to vararg array
+                                    .roles(*roleNames.toTypedArray()) // Prefix roles with "ROLE_"
                                     .build()
                                 userDetails
                             }
-                    }
                 } else {
                     Mono.error(UsernameNotFoundException("User not found"))
                 }
