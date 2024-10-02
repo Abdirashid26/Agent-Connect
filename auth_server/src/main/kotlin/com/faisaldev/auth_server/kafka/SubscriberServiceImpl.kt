@@ -43,7 +43,7 @@ class SubscriberServiceImpl(
         return User(
             username = userDto.phoneNumber,
             password =  passwordEncoder.encode(password), // You should hash this in a real use case
-            email = "${userDto.firstName}.${userDto.lastName}@example.com",
+            email = userDto.email,
             active = true,
             profileId = 123 // 123 represents Customer in Roles Table
         )

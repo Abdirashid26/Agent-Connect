@@ -29,5 +29,6 @@ data class UserDto(
     val county : String,
     val idNumber : String,
     val estate : String,
-    val password : String?
+    val password : String?,
+    val email : String
 )

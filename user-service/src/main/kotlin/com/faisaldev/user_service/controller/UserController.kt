@@ -59,7 +59,7 @@ class UserController(
         } catch (ex: GlobalException) {
             throw ex
         } catch (ex: Exception) {
-            println(ex.localizedMessage)
+            println("ERROR: " + ex.localizedMessage)
             throw GlobalException("User creation failed due to an unknown error.")
         }
     }

@@ -56,7 +56,8 @@ class UserServiceImpl(
             estate = userDto.estate,
             idNumber = userDto.idNumber,
             idFrontImage = idFrontImage,
-            idBackImage = idBackImage
+            idBackImage = idBackImage,
+            email = userDto.email
         )
 
         return usersRepository.save(user)

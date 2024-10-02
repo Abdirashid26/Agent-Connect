@@ -18,6 +18,7 @@ data class User(
     var county: String,
     var idNumber: String,
     var estate: String,
+    var email : String,
     var active : Boolean = false,
     var createDate: LocalDate = LocalDate.now(),
     var lastModifiedDate: LocalDate = LocalDate.now(),
@@ -31,7 +32,8 @@ data class UserDto(
     val county : String,
     val idNumber : String,
     val estate : String,
-    val password : String? = null
+    val password : String? = null,
+    val email : String
 )
 
 
@@ -42,7 +44,8 @@ fun User.toDto() : UserDto {
         phoneNumber = this.phoneNumber,
         county = this.county,
         idNumber = this.idNumber,
-        estate = this.estate
+        estate = this.estate,
+        email = this.email,
     )
     return userDto
 }
