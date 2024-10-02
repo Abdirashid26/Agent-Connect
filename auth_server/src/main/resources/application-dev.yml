@@ -28,8 +28,12 @@ spring:
         createUserCredentials-in-0:
           destination: create-credentials-agent-connect-topic
           group: create-credentials-agent-connect
+        sendWorkflowApproversEmails-in-0:
+          destination: agent-connect-send-email-to-approvers-topic
+          group: agent-connect-send-email-to-approvers-group
+
     function:
-      definition: createUserCredentials
+      definition: createUserCredentials;sendWorkflowApproversEmails
 
 
 security:

@@ -11,4 +11,6 @@ interface RoleRepository : ReactiveCrudRepository<Role, Long> {
 
      fun findByProfileId(profileId: Int): Mono<Role>
 
+     fun findByRoleName(roleName: String): Mono<Role>
+
 }
