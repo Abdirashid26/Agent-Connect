@@ -1,6 +1,7 @@
 package com.faisaldev.auth_server.services
 
 import com.faisaldev.auth_server.configs.JwtService
+import com.faisaldev.auth_server.dtos.CustomUserDetails
 import com.faisaldev.auth_server.dtos.LoginDto
 import com.faisaldev.auth_server.dtos.LoginResponseDto
 import com.faisaldev.auth_server.repositories.RoleRepository
@@ -8,6 +9,7 @@ import com.faisaldev.auth_server.repositories.UserRepository
 import com.faisaldev.user_service.utils.GlobalResponse
 import com.faisaldev.user_service.utils.GlobalStatus
 import org.apache.kafka.common.security.auth.Login
+import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UsernameNotFoundException
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
@@ -25,7 +27,7 @@ class AuthService(
 ) {
 
 
-    fun findByUsername(username: String?): Mono<UserDetails> {
+    fun findByUsername(username: String?): Mono<CustomUserDetails> {
         return userRepository.findByUsername(username ?: "")
             .flatMap { user ->
                 if (user != null) {
@@ -33,11 +35,19 @@ class AuthService(
                         roleRepository.findByProfileId(profileId) // Fetch roles based on IDs
                             .switchIfEmpty(Mono.error(UsernameNotFoundException("User does not have a Role")))
                             .map { role ->
-                                val roleNames = role.rolesList.split(",").map{ it } // return CUSTOMER,CREATE_PROFILE
-                                val userDetails = org.springframework.security.core.userdetails.User.withUsername(user.username)
-                                    .password(user.password) // Assuming password is already encoded
-                                    .roles(*roleNames.toTypedArray()) // Prefix roles with "ROLE_"
-                                    .build()
+
+                                val authorities = role.rolesList.split(",")
+                                    .map { "ROLE_${it.trim()}" } // Prefix roles with "ROLE_"
+                                    .map { SimpleGrantedAuthority(it) }
+
+
+                                val userDetails = CustomUserDetails(
+                                    user.username,
+                                    user.password,
+                                    authorities,
+                                    true,
+                                    role.roleName
+                                )
                                 userDetails
                             }
                 } else {
@@ -69,7 +79,8 @@ class AuthService(
                     val token: String = jwtService.generateToken(
                         mapOf(
                             "username" to loginDto.username,
-                            "roles" to user.authorities
+                            "roles" to user.authorities,
+                            "profile" to user.profile
                         ),
                         user
                     )

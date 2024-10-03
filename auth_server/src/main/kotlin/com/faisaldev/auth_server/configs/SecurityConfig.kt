@@ -45,7 +45,8 @@ class SecurityConfig(
                 exchanges
                     .pathMatchers(
                         "/public/**",
-                        "/api/v1/agent-connect/auth-service/validate-pin"
+                        "/api/v1/agent-connect/auth-service/validate-pin",
+                        "/api/v1/agent-connect/auth-service/workflow/**"
                         ).permitAll()
                     .anyExchange().authenticated()
             }

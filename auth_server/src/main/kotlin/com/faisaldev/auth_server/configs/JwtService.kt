@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component
 import java.io.FileInputStream
 import java.security.KeyStore
 import java.security.Key
+import java.security.PublicKey
 import java.util.*
 
 @Component
@@ -29,12 +30,24 @@ class JwtService {
     @Value("\${security.jwt.expiration-time}")
     private var jwtExpiration: Long = 0
 
-    private fun getSignInKey(): Key {
+    fun getSignInKey(): Key {
         val keyStore: KeyStore = KeyStore.getInstance("PKCS12").apply {
             val resource: Resource = ClassPathResource(keyName)
             load(resource.inputStream, keyPassword.toCharArray())
         }
         return keyStore.getKey(keyAlias, keyPassword.toCharArray()) as Key
+    }
+
+    fun getPublicKey(): PublicKey {
+        // Load the KeyStore
+        val keyStore: KeyStore = KeyStore.getInstance("PKCS12").apply {
+            val resource: Resource = ClassPathResource(keyName)
+            load(resource.inputStream, keyPassword.toCharArray())
+        }
+
+        // Retrieve the certificate and get the public key
+        val cert = keyStore.getCertificate(keyAlias)
+        return cert.publicKey
     }
 
     fun extractUsername(token: String): String {

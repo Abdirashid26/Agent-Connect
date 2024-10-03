@@ -21,7 +21,8 @@ open class SecurityConfig(
             .authorizeExchange { exchanges ->
                 exchanges
                     .pathMatchers(
-                        "/api/v1/agent-connect/auth-service/**",
+                        "/api/v1/agent-connect/auth-service/login",
+                        "/api/v1/agent-connect/auth-service/validate-pin",
                         "/api/v1/agent-connect/user-service/generate-otp",
                         "/api/v1/agent-connect/user-service/verify-otp",
                         "/api/v1/agent-connect/user-service/createUserAccount"
