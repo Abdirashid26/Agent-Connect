@@ -8,4 +8,8 @@ interface WalletRepository : CoroutineCrudRepository<Wallet, Long> {
     suspend fun findAllByPhoneNumber(phone: String): List<Wallet>?
     suspend fun findByPhoneNumber(phone: String): Wallet?
 
+    suspend fun findByPhoneNumberAndAccountNumber(phone: String, account: String): Wallet?
+
+    suspend fun findByAccountNumber(account: String): Wallet?
+
 }

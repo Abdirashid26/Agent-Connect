@@ -2,9 +2,7 @@ package com.faisaldev.wallet.controller
 
 import com.faisaldev.user_service.utils.GlobalResponse
 import com.faisaldev.user_service.utils.GlobalStatus
-import com.faisaldev.wallet.dto.BalanceInquiryRequest
-import com.faisaldev.wallet.dto.BalanceInquiryResponse
-import com.faisaldev.wallet.dto.GetWalletAccountsDto
+import com.faisaldev.wallet.dto.*
 import com.faisaldev.wallet.model.Wallet
 import com.faisaldev.wallet.service.WalletService
 import org.springframework.http.HttpStatusCode
@@ -33,6 +31,17 @@ class WalletController(
         return ResponseEntity.ok().body(globalResponse)
     }
 
+
+    /**
+     * Funds Transfer Api
+     */
+    @PostMapping("/funds-transfer")
+    suspend fun performFundsTransfer(
+        @RequestBody fundsTransferRequest: FundsTransferRequest
+    ) : ResponseEntity<GlobalResponse<FundsTransferResponse>>{
+        val globalResponse = walletService.performFundsTransfer(fundsTransferRequest)
+        return ResponseEntity.ok().body(globalResponse)
+    }
 
 
 
