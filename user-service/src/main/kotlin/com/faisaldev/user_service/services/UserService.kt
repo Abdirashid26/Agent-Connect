@@ -15,5 +15,7 @@ interface UserService {
 
     suspend fun getUserProfile(username : String) : User?
 
+//    suspend fun findUserByFirstName(firstName : String) : User?
+
 
 }

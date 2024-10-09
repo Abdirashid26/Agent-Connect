@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: faisaldev
+      changes:
+        - createTable:
+            tableName: tb_trx_message
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: debit_account
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: credit_account
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: narration
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: transaction_ref
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: amount
+                  type: DECIMAL(15,2)
+                  constraints:
+                    nullable: false

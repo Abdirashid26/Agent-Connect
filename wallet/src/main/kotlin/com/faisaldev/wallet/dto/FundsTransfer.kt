@@ -23,7 +23,5 @@ data class FundsTransferRequest(
 
 
 data class FundsTransferResponse(
-    var accountNumber: String? = null,
-    var availableBalance : String? = null,
-    var actualBalance : String? = null
+    var transactionRef : String? = null
 )

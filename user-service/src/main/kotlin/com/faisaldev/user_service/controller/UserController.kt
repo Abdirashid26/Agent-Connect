@@ -2,6 +2,7 @@ package com.faisaldev.user_service.controller
 
 import com.faisaldev.user_service.error_handlers.GlobalException
 import com.faisaldev.user_service.models.OtpDto
+import com.faisaldev.user_service.models.Test
 import com.faisaldev.user_service.models.User
 import com.faisaldev.user_service.models.UserDto
 import com.faisaldev.user_service.services.OtpService
@@ -90,6 +91,21 @@ class UserController(
         )
     }
 
+
+
+//    @PostMapping("/test-controller")
+//    suspend fun testSharding(
+//        @RequestBody test : Test
+//    ) : ResponseEntity<GlobalResponse<User?>>{
+//        val user = userService.findUserByFirstName(test.firstName)
+//        return ResponseEntity.ok().body(
+//            GlobalResponse(
+//                GlobalStatus.SUCCESS.status,
+//                "Test Sharding",
+//                user
+//            )
+//        )
+//    }
 
 
 }

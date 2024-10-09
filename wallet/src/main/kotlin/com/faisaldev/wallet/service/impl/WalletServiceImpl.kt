@@ -3,10 +3,13 @@ package com.faisaldev.wallet.service.impl
 import com.faisaldev.user_service.utils.GlobalResponse
 import com.faisaldev.user_service.utils.GlobalStatus
 import com.faisaldev.wallet.dto.*
+import com.faisaldev.wallet.model.TrxMessage
 import com.faisaldev.wallet.model.Wallet
 import com.faisaldev.wallet.repository.WalletRepository
 import com.faisaldev.wallet.service.AuthService
+import com.faisaldev.wallet.service.TrxMessagesService
 import com.faisaldev.wallet.service.WalletService
+import com.faisaldev.wallet.utils.UniqueIdGeneratorBitManipulation
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
@@ -14,8 +17,13 @@ import org.springframework.transaction.annotation.Transactional
 @Service
 class WalletServiceImpl(
     private val walletRepository: WalletRepository,
-    private val authService: AuthService
+    private val authService: AuthService,
+    private val trxMessagesService: TrxMessagesService
 ): WalletService {
+
+
+    val uniqueIdGenerator = UniqueIdGeneratorBitManipulation(1, 1)
+
 
 
     override suspend fun performBalanceInquiry(balanceInquiryRequest: BalanceInquiryRequest): GlobalResponse<BalanceInquiryResponse> {
@@ -110,11 +118,24 @@ class WalletServiceImpl(
         walletRepository.save(wallet)
         walletRepository.save(creditWallet)
 
-        // TODO: REMEMEBER TO ADD LOGS SO AS TO RETURN A TRANSACTION ID
+        val transactionRef = uniqueIdGenerator.generateUniqueId()
+        val trxMessage = TrxMessage(
+            debitAccount = wallet.accountNumber,
+            creditAccount = creditWallet.accountNumber,
+            narration = "Funds Transfer",
+            transactionRef = transactionRef.toString(),
+            amount = fundsTransferRequest.amount.toBigDecimal(),
+        )
+
+        trxMessagesService.saveTrxMessage(trxMessage)
+
+        val fundsTransferResponse = FundsTransferResponse(transactionRef = transactionRef.toString())
+
+        
         return GlobalResponse(
             GlobalStatus.SUCCESS.status,
             "Funds Transfer Successful",
-            null
+            fundsTransferResponse
         )
 
 

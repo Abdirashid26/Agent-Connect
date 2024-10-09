@@ -7,6 +7,7 @@ import com.faisaldev.user_service.models.UserDto
 import com.faisaldev.user_service.models.toDto
 import com.faisaldev.user_service.repositories.UsersRepository
 import com.faisaldev.user_service.services.UserService
+//import com.faisaldev.user_service.shard_configs.ShardContextHolder
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.toList
@@ -82,6 +83,11 @@ class UserServiceImpl(
     override suspend fun getUserProfile(username: String): User? {
         return usersRepository.findByPhoneNumber(username)
     }
+
+//    override suspend fun findUserByFirstName(firstName: String): User? {
+//        ShardContextHolder.setCustomerFirstName(firstName)
+//        return usersRepository.findByFirstName(firstName)
+//    }
 
 
 }
