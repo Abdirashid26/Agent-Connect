@@ -10,6 +10,8 @@ interface WalletService {
 
     suspend fun performFundsTransfer(fundsTransferRequest: FundsTransferRequest ) : GlobalResponse<FundsTransferResponse>
 
+    suspend fun getMiniStatement(statementRequest: StatementRequest) : GlobalResponse<List<StatementObject>>
+
     suspend fun getAllWallets(getWalletAccountsDto: GetWalletAccountsDto): List<Wallet>?
 
 }

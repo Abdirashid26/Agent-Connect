@@ -5,6 +5,7 @@ import com.faisaldev.user_service.utils.GlobalStatus
 import com.faisaldev.wallet.dto.*
 import com.faisaldev.wallet.model.TrxMessage
 import com.faisaldev.wallet.model.Wallet
+import com.faisaldev.wallet.repository.TrxMessageRepository
 import com.faisaldev.wallet.repository.WalletRepository
 import com.faisaldev.wallet.service.AuthService
 import com.faisaldev.wallet.service.TrxMessagesService
@@ -12,13 +13,16 @@ import com.faisaldev.wallet.service.WalletService
 import com.faisaldev.wallet.utils.UniqueIdGeneratorBitManipulation
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
+import java.math.BigDecimal
+import java.util.stream.Collectors
 
 
 @Service
 class WalletServiceImpl(
     private val walletRepository: WalletRepository,
     private val authService: AuthService,
-    private val trxMessagesService: TrxMessagesService
+    private val trxMessagesService: TrxMessagesService,
+    private val trxMessageRepository: TrxMessageRepository
 ): WalletService {
 
 
@@ -53,6 +57,18 @@ class WalletServiceImpl(
             availableBalance = availableBalance.toString(),
             accountNumber = wallet.accountNumber
         )
+
+
+        val transactionRef = uniqueIdGenerator.generateUniqueId()
+        val trxMessage = TrxMessage(
+            debitAccount = wallet.accountNumber,
+            creditAccount = "",
+            narration = "Balance Inquiry",
+            transactionRef = transactionRef.toString(),
+            amount = BigDecimal(0),
+        )
+
+        trxMessagesService.saveTrxMessage(trxMessage)
 
         return GlobalResponse(GlobalStatus.SUCCESS.status, "Wallet Balance", balanceInquiryResponse)
     }
@@ -139,6 +155,62 @@ class WalletServiceImpl(
         )
 
 
+    }
+
+    override suspend fun getMiniStatement(statementRequest: StatementRequest) : GlobalResponse<List<StatementObject>> {
+        //validate the pin first
+        val validationResponse = authService.validatePin(ValidatePinDto(statementRequest.phoneNumber, statementRequest.transactionPin))
+
+        // Proceed with funds transfer logic after PIN validation
+        if (validationResponse.status == GlobalStatus.FAILURE.status) {
+            return GlobalResponse(
+                GlobalStatus.FAILURE.status,
+                "PIN validation failed",
+                null
+            )
+        }
+
+
+
+        // check if the  account exists
+        val wallet  = walletRepository.findByPhoneNumberAndAccountNumber(statementRequest.phoneNumber, statementRequest.accountNumber);
+
+        if (wallet == null) {
+            return GlobalResponse(
+                GlobalStatus.FAILURE.status,
+                "Debit Account not found !",
+                null
+            )
+        }
+
+        // start to pull statements
+        val trxMessages = trxMessageRepository.findAllByCreditAccountOrDebitAccount(statementRequest.accountNumber,statementRequest.accountNumber)
+
+        // check if the statement request has a limit (mini-statment) else  then this is a full statement
+        val limitedTrxMessages = trxMessages
+            .map { trxMessage -> convertTrxMessageToStatementObject(trxMessage, statementRequest.accountNumber) } // Passing accountNumber
+            .take(statementRequest.limit) // Limit the number of transactions to the requested limit
+
+        return GlobalResponse(
+            GlobalStatus.SUCCESS.status,
+            "Mini Statement for account number ${statementRequest.accountNumber}",
+            limitedTrxMessages.toList()
+        )
+    }
+
+
+
+    fun convertTrxMessageToStatementObject(trxMessage: TrxMessage, accountNumber : String) : StatementObject {
+        val statementObject: StatementObject = StatementObject(
+            creditAccountNumber = trxMessage.creditAccount,
+            debitAccountNumber = trxMessage.debitAccount,
+            amount = trxMessage.amount,
+            narration = trxMessage.narration,
+            transactionRef = trxMessage.transactionRef,
+            isCredit = accountNumber == trxMessage.creditAccount,
+        )
+
+        return statementObject
     }
 
 

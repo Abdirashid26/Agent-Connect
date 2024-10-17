@@ -44,6 +44,17 @@ class WalletController(
     }
 
 
+    /**
+     * Get Mini-Statment
+     */
+    @PostMapping("/mini-statement")
+    suspend fun getMiniStatement(
+        @RequestBody statementRequest: StatementRequest
+    ) : ResponseEntity<GlobalResponse<List<StatementObject>>>{
+        val globalResponse = walletService.getMiniStatement(statementRequest)
+        return ResponseEntity.ok().body(globalResponse)
+    }
+
 
 
     @PostMapping("/wallet-accounts")
